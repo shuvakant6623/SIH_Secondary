@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Snapby - Crowdsourced ocean hazard reporting and social media analytics for India's coastlines. Every wave tells a story. Together, we listen." />
+  <meta name="keywords" content="ocean hazards, coastal safety, India coastline, crowdsourced reporting, INCOIS, marine safety, tsunami warning, coastal monitoring" />
+  <meta name="author" content="Snapby Team" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://snapby.in/" />
+  <meta property="og:title" content="Snapby - Every Wave Tells a Story. Together, We Listen." />
+  <meta property="og:description" content="Empowering coastal communities with real-time ocean intelligence, crowdsourced reporting, and AI-powered hazard detection across India's 7,516 km coastline." />
+  <meta property="og:image" content="https://snapby.in/og-image.jpg" />
+  <meta property="og:site_name" content="Snapby" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://snapby.in/" />
+  <meta property="twitter:title" content="Snapby - Every Wave Tells a Story. Together, We Listen." />
+  <meta property="twitter:description" content="Empowering coastal communities with real-time ocean intelligence, crowdsourced reporting, and AI-powered hazard detection across India's 7,516 km coastline." />
+  <meta property="twitter:image" content="https://snapby.in/og-image.jpg" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  <!-- Theme Color for Mobile Browsers -->
+  <meta name="theme-color" content="#10b981" />
+  <meta name="msapplication-TileColor" content="#10b981" />
+  
+  <!-- Preconnect to external domains for performance -->
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- DNS Prefetch for better performance -->
+  <link rel="dns-prefetch" href="//api.incois.gov.in" />
+  <link rel="dns-prefetch" href="//indiancoastguard.nic.in" />
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  
+  <!-- Geo Location for Indian Coastal Regions -->
+  <meta name="geo.region" content="IN" />
+  <meta name="geo.placename" content="India" />
+  <meta name="geo.position" content="20.5937;78.9629" />
+  <meta name="ICBM" content="20.5937, 78.9629" />
+  
+  <!-- Language and Regional Settings -->
+  <meta name="language" content="English" />
+  <meta name="coverage" content="Worldwide" />
+  <meta name="distribution" content="Global" />
+  <meta name="rating" content="General" />
+  
+  <!-- Emergency Contact Information -->
+  <meta name="emergency.contact" content="Indian Coast Guard: 1554" />
+  <meta name="emergency.maritime" content="MRCC Mumbai: +91-22-22023561" />
+  
+  <title>SAGE - Social Analytics and Geo Intelligence Engine.</title>
+  
+  <!-- Structured Data for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Snapby",
+    "description": "Crowdsourced ocean hazard reporting and social media analytics for India's coastlines",
+    "url": "https://snapby.in",
+    "applicationCategory": "SafetyApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Snapby Team",
+      "url": "https://snapby.in"
+    },
+    "featureList": [
+      "GPS geolocation for photo uploads",
+      "Coastal hazard alerts",
+      "Social media analytics",
+      "Live INCOIS graphs",
+      "Coast Guard integration",
+      "Multilingual support"
+    ],
+    "screenshot": "https://snapby.in/screenshot.jpg"
+  }
+  </script>
+  
+  <!-- Critical CSS inlined for faster loading -->
+  <style>
+    /* Critical loading styles */
+    #root {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #ecfdf5 100%);
+    }
+    
+    /* Loading spinner for initial app load */
+    .loading-spinner {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      border: 3px solid #e2e8f0;
+      border-radius: 50%;
+      border-top-color: #10b981;
+      animation: spin 1s ease-in-out infinite;
+      z-index: 9999;
+    }
+    
+    @keyframes spin {
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    
+    /* Hide loading spinner when app loads */
+    .app-loaded .loading-spinner {
+      display: none;
+    }
+    
+    /* Prevent flash of unstyled content */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #ffffff;
+      color: #0f172a;
+    }
+    
+    /* Emergency banner styles for critical alerts */
+    .emergency-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(90deg, #ef4444, #dc2626);
+      color: white;
+      padding: 8px 16px;
+      text-align: center;
+      font-weight: 600;
+      z-index: 10000;
+      display: none;
+    }
+    
+    .emergency-banner.active {
+      display: block;
+    }
+    
+    /* Accessibility improvements */
+    @media (prefers-reduced-motion: reduce) {
+      .loading-spinner {
+        animation: none;
+      }
+    }
+    
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+      body {
+        background: #ffffff;
+        color: #000000;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Emergency Alert Banner (hidden by default, shown via JavaScript for emergencies) -->
+  <div id="emergency-banner" class="emergency-banner" role="alert" aria-live="assertive">
+    <span id="emergency-message">🚨 EMERGENCY ALERT: Check local authorities for immediate coastal safety updates</span>
+  </div>
+  
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-emerald-600 text-white px-4 py-2 rounded-md z-50">
+    Skip to main content
+  </a>
+  
+  <!-- Main app container -->
+  <div id="root">
+    <!-- Loading spinner displayed until React app loads -->
+    <div class="loading-spinner" aria-label="Loading Snapby application"></div>
+    
+    <!-- Fallback content for users with JavaScript disabled -->
+    <noscript>
+      <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #ffffff; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 2rem; font-family: system-ui, sans-serif;">
+        <div style="max-width: 600px;">
+          <h1 style="color: #10b981; font-size: 2.5rem; margin-bottom: 1rem;">Snapby</h1>
+          <h2 style="color: #0f172a; font-size: 1.5rem; margin-bottom: 2rem;">Every Wave Tells a Story. Together, We Listen.</h2>
+          <p style="color: #475569; font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
+            This application requires JavaScript to function properly. Please enable JavaScript in your browser settings to access the full Snapby ocean hazard reporting platform.
+          </p>
+          <div style="background: #ecfdf5; border: 1px solid #10b981; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+            <h3 style="color: #047857; margin-bottom: 1rem;">Emergency Contacts</h3>
+            <p style="color: #065f46; margin: 0.5rem 0;"><strong>Indian Coast Guard:</strong> 1554</p>
+            <p style="color: #065f46; margin: 0.5rem 0;"><strong>MRCC Mumbai:</strong> +91-22-22023561</p>
+            <p style="color: #065f46; margin: 0.5rem 0;"><strong>INCOIS Hyderabad:</strong> +91-40-23895006</p>
+          </div>
+          <p style="color: #64748b; font-size: 0.9rem;">
+            For immediate coastal emergency reporting, contact your local authorities or the Indian Coast Guard.
+          </p>
+        </div>
+      </div>
+    </noscript>
+  </div>
+  
+  <!-- Service Worker Registration for Offline Capability -->
+  <script>
+    // Register service worker for offline functionality
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function(registration) {
+            console.log('SW registered: ', registration);
+          })
+          .catch(function(registrationError) {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
+    
+    // Emergency alert system
+    function showEmergencyAlert(message) {
+      const banner = document.getElementById('emergency-banner');
+      const messageEl = document.getElementById('emergency-message');
+      if (banner && messageEl) {
+        messageEl.textContent = message;
+        banner.classList.add('active');
+        
+        // Auto-hide after 30 seconds unless it's a critical alert
+        setTimeout(() => {
+          if (!message.toLowerCase().includes('tsunami') && !message.toLowerCase().includes('cyclone')) {
+            banner.classList.remove('active');
+          }
+        }, 30000);
+      }
+    }
+    
+    // Hide loading spinner when app loads
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add app-loaded class to hide spinner after React loads
+      setTimeout(() => {
+        document.body.classList.add('app-loaded');
+      }, 1000);
+    });
+    
+    // Geolocation permission request for better coastal reporting
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function(position) {
+          console.log('Location access granted for coastal reporting');
+        },
+        function(error) {
+          console.log('Location access denied - manual location entry will be required');
+        }
+      );
+    }
+    
+    // Performance monitoring
+    window.addEventListener('load', function() {
+      const loadTime = performance.now();
+      console.log(`Snapby loaded in ${Math.round(loadTime)}ms`);
+    });
+  </script>
+  
+  <!-- Analytics placeholder (replace with actual analytics code) -->
+  <script>
+    // Google Analytics or other analytics code would go here
+    // gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+</body>
+</html>
