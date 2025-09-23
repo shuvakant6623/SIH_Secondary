@@ -3,7 +3,7 @@ import { LoginPage } from './components/LoginPage';
 import { Navigation } from './components/Navigation';
 import { AboutSection } from './components/AboutSection';
 import { SnapReportsSection } from './components/SnapReportsSection';
-import { INCOISSection } from './components/INCOISSection';
+import INCOISSection from './components/INCOISSection';
 import { LLMReportsSection } from './components/LLMReportsSection';
 import { CoastGuardSection } from './components/CoastGuardSection';
 import { WaveAnimation } from './components/WaveAnimation';

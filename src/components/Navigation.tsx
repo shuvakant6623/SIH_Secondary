@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Waves, Menu, X, MapPin, Camera, Activity, MessageSquare, Shield } from 'lucide-react';
 import { Button } from './ui/button';
-import Sage from '../assets/SageLogo.png';
-
 interface NavigationProps {
   activeSection: string;
   setActiveSection: (section: string) => void;
@@ -31,9 +29,9 @@ export function Navigation({ activeSection, setActiveSection }: NavigationProps)
             onClick={() => setActiveSection('home')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-          >
+          > 
             <div className="w-12 h-12 bg-white/10 rounded-lg p-1 backdrop-blur-sm">
-              <img src={Sage} alt="Sage" className="w-full h-full object-contain" />
+              <img src='../../src/assets/SageLogo.png' alt="Sage" className="w-full h-full object-contain" />
             </div>
             <div>
               <h1 className="font-bold text-xl">Snapby</h1>
