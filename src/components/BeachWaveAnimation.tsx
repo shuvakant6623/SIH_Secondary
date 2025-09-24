@@ -1,5 +1,4 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 export function BeachWaveAnimation() {
   return (
@@ -26,9 +25,9 @@ export function BeachWaveAnimation() {
             ]
           }}
           transition={{
-            duration: 4,
+            duration: 6,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: [0.25, 0.46, 0.45, 0.94]
           }}
         />
         
@@ -44,10 +43,10 @@ export function BeachWaveAnimation() {
             ]
           }}
           transition={{
-            duration: 3.5,
+            duration: 5.5,
             repeat: Infinity,
-            ease: "easeInOut",
-            delay: 0.5
+            ease: [0.65, 0, 0.35, 1],
+            delay: 0.8
           }}
         />
         
@@ -63,29 +62,29 @@ export function BeachWaveAnimation() {
             ]
           }}
           transition={{
-            duration: 2.8,
+            duration: 4.2,
             repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
+            ease: [0.4, 0, 0.2, 1],
+            delay: 1.2
           }}
         />
         
         {/* Wave gradients */}
         <defs>
           <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#1d4ed8" stopOpacity="0.8" />
+            <stop offset="0%" stopColor="#0891b2" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#14b8a6" stopOpacity="0.8" />
           </linearGradient>
           
           <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#2563eb" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="#1e40af" stopOpacity="0.9" />
+            <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#0891b2" stopOpacity="0.9" />
           </linearGradient>
           
           <linearGradient id="foamGradient" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
-            <stop offset="50%" stopColor="#e0f2fe" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#0ea5e9" stopOpacity="0.7" />
+            <stop offset="50%" stopColor="#cffafe" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.7" />
           </linearGradient>
         </defs>
       </svg>

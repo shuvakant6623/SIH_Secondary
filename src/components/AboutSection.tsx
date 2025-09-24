@@ -5,8 +5,6 @@ import { Button } from './ui/button';
 import { MapPin, Waves, Users, Shield, Anchor, Cloud, Activity } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import INDIA_Coastal_map from "./assets/INDIA_Coastal_map.png";
-
 const coastalStates = [
   { 
     name: "Gujarat", 
@@ -238,9 +236,9 @@ export function AboutSection() {
               <CardContent className="p-6">
                 <div className="relative bg-white rounded-lg overflow-hidden border border-slate-300 mb-4">
                   <ImageWithFallback
-                    src={INDIA_Coastal_map}
+                    src='../../src/assets/INDIA_Coastal_map.png'
                     alt="India Coastal States Map"
-                    className="w-full h-56 object-contain"
+                    className="w-full h-150 object-contain"
                   />
                   <div className="absolute top-2 left-2 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-md text-xs shadow-lg border border-slate-300">
                     <div className="text-indigo-700 font-semibold mb-1">Coastal Regions</div>

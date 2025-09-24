@@ -10,7 +10,7 @@ export function Header() {
             <Waves className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="font-bold text-xl">Snapby</h1>
+            <h1 className="font-bold text-xl">Sage</h1>
             <p className="text-xs text-blue-100">Ocean Hazard Reporting</p>
           </div>
         </div>

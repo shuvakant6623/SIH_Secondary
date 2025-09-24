@@ -5,7 +5,6 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { motion } from 'framer-motion';
 import { Radio, Mail, User, Lock } from 'lucide-react';
-import SAGE from 'figma:asset/02eb6f392b71258b67b39830c28909445ad8d8e5.png';
 
 interface LoginPageProps {
   onLogin: (userData: { username: string; email: string }) => void;
@@ -86,7 +85,7 @@ export function LoginPage({ onLogin }: LoginPageProps) {
                 className="relative"
               >
                 <img 
-                  src={SAGE}
+                  src='../assets/SageLogo.png'
                   alt="SAGE Logo"
                   className="w-20 h-20 object-contain"
                 />
